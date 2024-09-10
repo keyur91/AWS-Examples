@@ -5,6 +5,9 @@ set -e
 # Directory where the random files will be created/ and tmp where we store this file
 OUTPUT_DIR="/tmp/s3-bash-scripts"
 
+# remove folder if already exists
+rm -r 
+
 # lets create a output folder
 mkdir -p $OUTPUT_DIR
 
