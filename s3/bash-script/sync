@@ -9,7 +9,7 @@ fi
 # check for filename or prefix
 
 if [ -z "$2" ]; then
-    echo "There needs to be a bucket name e.g. ./bucket my-bucket-name"
+    echo "There needs to be a filename prefix e.g. ./sync my-bucket-name my-filename-prefix"
     exit 1
 fi
 
@@ -31,7 +31,7 @@ NUM_FILES=$((RANDOM % 6 + 5))
 
 for ((i=1; i<=$NUM_FILES; i++)); do
     # Generates a random filename
-    FILENAME="$OUTPUT_DIR/$FILENAME_PREFIX$i.txt"
+    FILENAME="$OUTPUT_DIR/${FILENAME_PREFIX}_$i.txt"
 
     # Generate random data and write it to the file
     dd if=/dev/urandom of="$FILENAME" bs=1024 count=$((RANDOM % 1024 + 1)) 2>/dev/null
