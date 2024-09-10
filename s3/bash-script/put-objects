@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "== sync"
 # Exit immediately if any command returns a non-zero status
 set -e 
 # Directory where the random files will be created/ and tmp where we store this file
