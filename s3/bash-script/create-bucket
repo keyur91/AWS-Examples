@@ -2,7 +2,7 @@
 echo "== Create Bucket"
 
 # check for the bucket name
-if [-z "$1" ]; then
+if [ -z "$1" ]; then
     echo "There needs to be a bucket name e.g. ./bucket my-bucket-name"
     exit 1
 fi
@@ -11,5 +11,5 @@ fi
 BUCKET_NAME=$1 
 
 # command to create a bucket in AWS
-aws s3api create-bucket --bucket $BUCKET_NAME --create-bucket-configuration="LocalConstraint=us-east-2" --query Location --output text 
+aws s3api create-bucket --bucket $BUCKET_NAME --region us-east-1
 

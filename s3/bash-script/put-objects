@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Directory where the random files will be created/ and tmp where we store this file
+OUTPUT_DIR="/tmp/s3-bash-scripts"
+
+# lets create a output folder
+mkdir -p $OUTPUT_DIR
+
+# Genreat a random numnber
+# to determine how many files to create
+NUM_FILES=$((RANDOM % 6 + 5))
+
+for (i=1; i<=$NUM_FILES; i++); do 
+
+    # Generates a random filename
+    FILENAME="OUTPUT_DIR/file_$i.txt"
+
+    # Generate randome datat and write it to the file
+    dd if=/dev/urandom of="$FILENAME" bs=1024 count=$((RANDOM % 1024 + 1)) 2>/dev/null
+done
