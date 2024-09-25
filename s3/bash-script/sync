@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+# Exit if any of the command fails.
 set -e
 
+# checking with (-z) if the user has passed the bucket name, if not then script will exit. 
 if [ -z "$1" ]; then
     echo "There needs to be a bucket name e.g. ./bucket my-bucket-name"
     exit 1
